@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="path/to/style.css" /> -->
     <title>YourHABIT</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <header>YourHABIT</header>
+    <main>
+      <div id="root"></div>
+      <template id="cat">
+        <img src="{{img}}" alt="cat" width="200px" />
+        <h2>Cat: {{name}}</h2>
+      </template>
+      <ul id="habitsList">
+        Список привычек
+      </ul>
+      <template id="habit">
+        {{#each habits}}
+        <li>
+          <h2>Habit: {{title}}</h2>
+          {{#if alert}}
+          <p>alert: Ok</p>
+          {{else}}
+          <p>alert: you need more water</p>
+          {{/if}}
+          <p>description</p>
+          <ul>
+            {{#each color}}
+            <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </li>
+        {{/each}}
+      </template>
+    </main>
 
-</body>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <!-- <script src="index.js"></script> -->
+  </body>
 </html>

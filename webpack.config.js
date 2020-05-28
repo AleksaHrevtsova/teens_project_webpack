@@ -1,6 +1,6 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // console.log(__dirname);
 
@@ -21,27 +21,53 @@ module.exports = {
         use: ["babel-loader"],
       },
       {
-        test: /\.css$/i,
+        test: /\.html$/,
+        use: "html-loader",
+      },
+      {
+        test: /\.css$/,
         exclude: /node_modules/,
         // порядок важен!
         use: [
           "style-loader",
           MiniCssExtractPlugin.loader,
-          "css-loader",
           "postcss-loader",
+          "css-loader",
+        ],
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$i/,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              name: "[path]/[name].[ext]",
+              limit: 5000,
+            },
+          },
+          {
+            loader: "image-webpack-loader",
+            options: {
+              mozjpeg: { progressive: true, quality: 65 },
+              optipng: { enabled: false },
+              pngquant: { quality: "65-90", speed: 4 },
+              gifsicle: { interlaced: false },
+              webp: { quality: 75 },
+            },
+          },
         ],
       },
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "./src/index.html",
       inject: true,
     }),
-    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: "styles.css",
+      filename: "style.css",
     }),
   ],
   devServer: {
