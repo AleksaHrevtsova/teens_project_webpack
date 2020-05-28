@@ -1,0 +1,38 @@
+{
+  "name": "teens_project_webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack --mode=production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AleksandraHrevtsova/teens_project_webpack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AleksandraHrevtsova/teens_project_webpack/issues"
+  },
+  "homepage": "https://github.com/AleksandraHrevtsova/teens_project_webpack#readme",
+  "devDependencies": {
+    "@babel/core": "^7.10.1",
+    "@babel/preset-env": "^7.10.1",
+    "@babel/preset-react": "^7.10.1",
+    "autoprefixer": "^9.8.0",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.5.3",
+    "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "postcss-loader": "^3.0.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
