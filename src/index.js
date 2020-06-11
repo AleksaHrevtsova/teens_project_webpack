@@ -1,15 +1,13 @@
-// import user from "home";
-// import style from "style";
-// const signIn = function () {
-//   console.log(`Hello!, ${user}`);
-// };
-// signIn();
+// import "./styles.css";
+import "./index.html";
+lightbox.show();
 const cat = {
   name: "Barsik",
   img:
     "https://images.pexels.com/photos/1928151/pexels-photo-1928151.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 };
 const root = document.querySelector("#root");
+clg;
 const source = document.querySelector("#cat").innerHTML.trim();
 const template = Handlebars.compile(source);
 const markup = template(cat);
